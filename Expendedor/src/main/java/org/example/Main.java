@@ -7,6 +7,8 @@ public class Main {
         Comprador p = null;
         p = new Comprador(null, Expendedor.COCA, exp);
         System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
+        p = new Comprador(m, Expendedor.SPRITE, exp);
+        System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
         p = new Comprador(m, Expendedor.COCA, exp);
         System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
         p = new Comprador(m, Expendedor.COCA, exp);

@@ -3,18 +3,18 @@ package org.example;
 public class Expendedor {
     public static final int COCA = 1;
     public static final int SPRITE = 2;
-    private Deposito coca;
-    private Deposito sprite;
-    private DepositoM monVu = new DepositoM();
+    private DepositoG<Bebida> coca;
+    private DepositoG<Bebida> sprite;
+    private DepositoG<Moneda> monVu = new DepositoG();
     private int precio;
     public Expendedor(int numBebidas, int precioBebidas) {
-        coca = new Deposito(numBebidas);
-        sprite = new Deposito(numBebidas);
+        coca = new DepositoG();
+        sprite = new DepositoG();
         for (int i = 0; i < numBebidas; i++) {
             Bebida b1 = new CocaCola(100 + i);
-            coca.addBebida(b1);
+            coca.addObject(b1);
             Bebida b2 = new Sprite(200 + i);
-            sprite.addBebida(b2);
+            sprite.addObject(b2);
         }
         precio = precioBebidas;
     }
@@ -25,27 +25,35 @@ public class Expendedor {
             } else {
                 Bebida b = null;
                 if (cual == COCA) {
-                    b = coca.getBebida();
+                    b = coca.getObject();
                 } else if (cual == SPRITE) {
-                    b = sprite.getBebida();
+                    b = sprite.getObject();
                 } else {
-                    monVu.addMoneda(m);
+                    for (int i = 0; i < (m.getValor() / 100); i++) {
+                        Moneda m100 = null;
+                        m100 = new Moneda100();
+                        monVu.addObject(m100);
+                    }
                     return null;
                 }
                 if (m.getValor() < precio) {
                     if (cual == COCA) {
-                        coca.addBebida(b);
+                        coca.addObject(b);
                     } else {
-                        sprite.addBebida(b);
+                        sprite.addObject(b);
                     }
-                    monVu.addMoneda(m);
+                    for (int i = 0; i < (m.getValor() / 100); i++) {
+                        Moneda m100 = null;
+                        m100 = new Moneda100();
+                        monVu.addObject(m100);
+                    }
                     return null;
                 } else if (cual == COCA && b != null) {
                     if (m.getValor() > precio) {
                         Moneda m100 = null;
                         for (int i = 0; i < ((m.getValor() - precio) / 100); i++) {
                             m100 = new Moneda100();
-                            monVu.addMoneda(m100);
+                            monVu.addObject(m100);
                         }
                         return b;
                     } else {
@@ -56,14 +64,18 @@ public class Expendedor {
                         Moneda m100 = null;
                         for (int i = 0; i < ((m.getValor() - precio) / 100); i++) {
                             m100 = new Moneda100();
-                            monVu.addMoneda(m100);
+                            monVu.addObject(m100);
                         }
                         return b;
                     } else {
                         return b;
                     }
                 } else {
-                    monVu.addMoneda(m);
+                    for (int i = 0; i < (m.getValor() / 100); i++) {
+                        Moneda m100 = null;
+                        m100 = new Moneda100();
+                        monVu.addObject(m100);
+                    };
                     return null;
                 }
             }
@@ -73,6 +85,6 @@ public class Expendedor {
 
     }
     public Moneda getVuelto() {
-        return monVu.getMoneda();
+        return monVu.getObject();
     }
 }

@@ -7,11 +7,7 @@ public class DepositoM {
         al = new ArrayList();
     }
     public void addMoneda(Moneda m) {
-        Moneda m100 = null;
-        for (int i = 0; i < (m.getValor() / 100); i++) {
-            m100 = new Moneda100();
-            al.add(m100);
-        }
+        al.add(m);
     }
     public Moneda getMoneda() {
         if (al.size() > 0) {
