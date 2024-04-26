@@ -6,19 +6,14 @@ public class Main {
         Moneda m = new Moneda500();
         Comprador p = null;
         p = new Comprador(null, Expendedor.COCA, exp);
-        System.out.println(p.cuantoVuelto());
-        System.out.println(p.queBebiste());
+        System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
         p = new Comprador(m, Expendedor.COCA, exp);
-        System.out.println(p.cuantoVuelto());
-        System.out.println(p.queBebiste());
+        System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
         p = new Comprador(m, Expendedor.COCA, exp);
-        System.out.println(p.cuantoVuelto());
-        System.out.println(p.queBebiste());
+        System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
         p = new Comprador(m, Expendedor.COCA, exp);
-        System.out.println(p.cuantoVuelto());
-        System.out.println(p.queBebiste());
+        System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
         p = new Comprador(m, Expendedor.COCA, exp);
-        System.out.println(p.cuantoVuelto());
-        System.out.println(p.queBebiste());
+        System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
     }
 }
