@@ -1,8 +1,6 @@
 package org.example;
 
 public class Expendedor {
-    public static final int COCA = 1;
-    public static final int SPRITE = 2;
     private DepositoG<Bebida> coca;
     private DepositoG<Bebida> sprite;
     private DepositoG<Moneda> monVu = new DepositoG();
@@ -24,9 +22,9 @@ public class Expendedor {
                 return null;
             } else {
                 Bebida b = null;
-                if (cual == COCA) {
+                if (cual == Articulos.COCA.ordinal()) {
                     b = coca.getObject();
-                } else if (cual == SPRITE) {
+                } else if (cual == Articulos.SPRITE.ordinal()) {
                     b = sprite.getObject();
                 } else {
                     for (int i = 0; i < (m.getValor() / 100); i++) {
@@ -37,7 +35,7 @@ public class Expendedor {
                     return null;
                 }
                 if (m.getValor() < precio) {
-                    if (cual == COCA) {
+                    if (cual == Articulos.COCA.ordinal()) {
                         coca.addObject(b);
                     } else {
                         sprite.addObject(b);
@@ -48,7 +46,7 @@ public class Expendedor {
                         monVu.addObject(m100);
                     }
                     return null;
-                } else if (cual == COCA && b != null) {
+                } else if (cual == Articulos.COCA.ordinal() && b != null) {
                     if (m.getValor() > precio) {
                         Moneda m100 = null;
                         for (int i = 0; i < ((m.getValor() - precio) / 100); i++) {
@@ -59,7 +57,7 @@ public class Expendedor {
                     } else {
                         return b;
                     }
-                } else if (cual == SPRITE && b != null) {
+                } else if (cual == Articulos.SPRITE.ordinal() && b != null) {
                     if (m.getValor() > precio) {
                         Moneda m100 = null;
                         for (int i = 0; i < ((m.getValor() - precio) / 100); i++) {
