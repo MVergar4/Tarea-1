@@ -18,71 +18,66 @@ public class Expendedor {
         }
         precio = precioBebidas;
     }
-    public Bebida comprarBebida(Moneda m, int cual) {
-        try {
-            if (m == null) {
-                return null;
+    public Bebida comprarBebida (Moneda m, int cual) throws PagoIncorrectoException, NoHayProductoException, PagoInsuficienteException {
+        if (m == null) {
+            throw new PagoIncorrectoException("Pago incorrecto, no se ha entregado moneda al expendedor");
+        } else {
+            Bebida b = null;
+            if (cual == COCA) {
+                b = coca.getObject();
+            } else if (cual == SPRITE) {
+                b = sprite.getObject();
             } else {
-                Bebida b = null;
-                if (cual == COCA) {
-                    b = coca.getObject();
-                } else if (cual == SPRITE) {
-                    b = sprite.getObject();
-                } else {
-                    for (int i = 0; i < (m.getValor() / 100); i++) {
-                        Moneda m100 = null;
-                        m100 = new Moneda100();
-                        monVu.addObject(m100);
-                    }
-                    return null;
+                for (int i = 0; i < (m.getValor() / 100); i++) {
+                    Moneda m100 = null;
+                    m100 = new Moneda100();
+                    monVu.addObject(m100);
                 }
-                if (m.getValor() < precio) {
-                    if (cual == COCA) {
-                        coca.addObject(b);
-                    } else {
-                        sprite.addObject(b);
-                    }
-                    for (int i = 0; i < (m.getValor() / 100); i++) {
-                        Moneda m100 = null;
-                        m100 = new Moneda100();
-                        monVu.addObject(m100);
-                    }
-                    return null;
-                } else if (cual == COCA && b != null) {
-                    if (m.getValor() > precio) {
-                        Moneda m100 = null;
-                        for (int i = 0; i < ((m.getValor() - precio) / 100); i++) {
-                            m100 = new Moneda100();
-                            monVu.addObject(m100);
-                        }
-                        return b;
-                    } else {
-                        return b;
-                    }
-                } else if (cual == SPRITE && b != null) {
-                    if (m.getValor() > precio) {
-                        Moneda m100 = null;
-                        for (int i = 0; i < ((m.getValor() - precio) / 100); i++) {
-                            m100 = new Moneda100();
-                            monVu.addObject(m100);
-                        }
-                        return b;
-                    } else {
-                        return b;
-                    }
-                } else {
-                    for (int i = 0; i < (m.getValor() / 100); i++) {
-                        Moneda m100 = null;
-                        m100 = new Moneda100();
-                        monVu.addObject(m100);
-                    };
-                    return null;
-                }
+                return null;
             }
-        } catch (Exception e) {
-            return null;
+            if (m.getValor() < precio) {
+                if (cual == COCA) {
+                    coca.addObject(b);
+                } else {
+                    sprite.addObject(b);
+                }
+                for (int i = 0; i < (m.getValor() / 100); i++) {
+                    Moneda m100 = null;
+                    m100 = new Moneda100();
+                    monVu.addObject(m100);
+                }
+                return null;
+            } else if (cual == COCA && b != null) {
+                if (m.getValor() > precio) {
+                    Moneda m100 = null;
+                    for (int i = 0; i < ((m.getValor() - precio) / 100); i++) {
+                        m100 = new Moneda100();
+                        monVu.addObject(m100);
+                    }
+                    return b;
+                } else {
+                    return b;
+                }
+            } else if (cual == SPRITE && b != null) {
+                if (m.getValor() > precio) {
+                    Moneda m100 = null;
+                    for (int i = 0; i < ((m.getValor() - precio) / 100); i++) {
+                        m100 = new Moneda100();
+                        monVu.addObject(m100);
+                    }
+                    return b;
+                } else {
+                    return b;
+                }
+            } else {
+                for (int i = 0; i < (m.getValor() / 100); i++) {
+                    Moneda m100 = null;
+                    m100 = new Moneda100();
+                    monVu.addObject(m100);
+                };
+                return null;
+            }
         }
-
     }
     public Moneda getVuelto() {
         return monVu.getObject();

@@ -5,8 +5,6 @@ public class Main {
         Expendedor exp = new Expendedor(3,400);
         Moneda m = new Moneda500();
         Comprador p = null;
-        p = new Comprador(null, Expendedor.COCA, exp);
-        System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
         p = new Comprador(m, Expendedor.SPRITE, exp);
         System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
         p = new Comprador(m, Expendedor.COCA, exp);
@@ -17,5 +15,6 @@ public class Main {
         System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
         p = new Comprador(m, Expendedor.COCA, exp);
         System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
+
     }
 }
