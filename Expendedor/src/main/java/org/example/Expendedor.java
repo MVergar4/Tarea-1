@@ -11,9 +11,9 @@ public class Expendedor {
         coca = new Deposito(numBebidas);
         sprite = new Deposito(numBebidas);
         for (int i = 0; i < numBebidas; i++) {
-            Bebida b1 = new CocaCola(100 + i);
+            Bebida b1 = new CocaCola();
             coca.addBebida(b1);
-            Bebida b2 = new Sprite(200 + i);
+            Bebida b2 = new Sprite();
             sprite.addBebida(b2);
         }
         precio = precioBebidas;
