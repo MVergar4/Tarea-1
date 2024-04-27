@@ -5,17 +5,17 @@ public class Main {
         Expendedor exp = new Expendedor(3,400);
         Moneda m = new Moneda500();
         Comprador p = null;
-        p = new Comprador(null, Expendedor.COCA, exp);
+        p = new Comprador(null, Articulos.COCA.ordinal(), exp);
         System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
-        p = new Comprador(m, Expendedor.SPRITE, exp);
+        p = new Comprador(m, Articulos.SPRITE.ordinal(), exp);
         System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
-        p = new Comprador(m, Expendedor.COCA, exp);
+        p = new Comprador(m, Articulos.COCA.ordinal(), exp);
         System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
-        p = new Comprador(m, Expendedor.COCA, exp);
+        p = new Comprador(m, Articulos.COCA.ordinal(), exp);
         System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
-        p = new Comprador(m, Expendedor.COCA, exp);
+        p = new Comprador(m, Articulos.COCA.ordinal(), exp);
         System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
-        p = new Comprador(m, Expendedor.COCA, exp);
+        p = new Comprador(m, Articulos.COCA.ordinal(), exp);
         System.out.println(p.cuantoVuelto() + ", " + p.queBebiste());
     }
 }
