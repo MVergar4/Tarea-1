@@ -1,12 +1,10 @@
 package org.example;
 
 public abstract class Producto {
-    private int serie;
-    public Producto(int x) {
-        serie = x;
+    public Producto() {
     }
-    public int getSerie() {
-        return serie;
+    public Producto getSerie() {
+        return this;
     }
     public abstract String consumir();
 }
