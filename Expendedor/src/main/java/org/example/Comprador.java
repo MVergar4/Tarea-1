@@ -3,10 +3,10 @@ package org.example;
 public class Comprador {
     private String sonido = null;
     private int vuelto = 0;
-    public Comprador(Moneda m, int cualBebida, Expendedor exp) {
-        Bebida b1 = exp.comprarBebida(m, cualBebida);
-        if (b1 != null) {
-            sonido = b1.consumir();
+    public Comprador(Moneda m, int cualProducto, Expendedor exp) {
+        Producto p = exp.comprarProducto(m, cualProducto);
+        if (p != null) {
+            sonido = p.consumir();
             Moneda m1 = null;
             while (true) {
                 m1 = exp.getVuelto();
@@ -31,7 +31,7 @@ public class Comprador {
     public int cuantoVuelto() {
         return vuelto;
     }
-    public String queBebiste() {
+    public String queConsumiste() {
         return sonido;
     }
 }

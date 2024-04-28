@@ -1,78 +1,172 @@
 package org.example;
 
 public class Expendedor {
-    private DepositoG<Bebida> coca;
-    private DepositoG<Bebida> sprite;
+    private DepositoG<Producto> coca = new DepositoG();
+    private DepositoG<Producto> sprite = new DepositoG();
+    private DepositoG<Producto> fanta = new DepositoG();
+    private DepositoG<Producto> snickers = new DepositoG();
+    private DepositoG<Producto> super8 = new DepositoG();
     private DepositoG<Moneda> monVu = new DepositoG();
-    private int precio;
-    public Expendedor(int numBebidas, int precioBebidas) {
-        coca = new DepositoG();
-        sprite = new DepositoG();
-        for (int i = 0; i < numBebidas; i++) {
-            Bebida b1 = new CocaCola();
-            coca.addObject(b1);
-            Bebida b2 = new Sprite();
-            sprite.addObject(b2);
+    public Expendedor(int numProductos) {
+        for (int i = 0; i < numProductos; i++) {
+            Producto p = null;
+            p = new CocaCola();
+            coca.addObject(p);
+            p = new Sprite();
+            sprite.addObject(p);
+            p = new Fanta();
+            fanta.addObject(p);
+            p = new Snickers();
+            snickers.addObject(p);
+            p = new Super8();
+            super8.addObject(p);
         }
-        precio = precioBebidas;
     }
-    public Bebida comprarBebida(Moneda m, int cual) {
+    public Producto comprarProducto(Moneda m, int cual) {
         if (m == null) {
             return null;
         } else {
-            Bebida b = null;
             if (cual == Articulos.COCA.ordinal()) {
-                b = coca.getObject();
+                if (coca.checkObject()) {
+                    if (m.getValor() < Articulos.COCA.getPrecio()) {
+                        for (int i = 0; i < (m.getValor() / 100); i++) {
+                            Moneda m100 = null;
+                            m100 = new Moneda100();
+                            monVu.addObject(m100);
+                        }
+                        return null;
+                    } else if (m.getValor() > Articulos.COCA.getPrecio()) {
+                        Moneda m100 = null;
+                        for (int i = 0; i < ((m.getValor() - Articulos.COCA.getPrecio()) / 100); i++) {
+                            m100 = new Moneda100();
+                            monVu.addObject(m100);
+                        }
+                        return coca.getObject();
+                    } else {
+                        return coca.getObject();
+                    }
+                } else {
+                    for (int i = 0; i < (m.getValor() / 100); i++) {
+                        Moneda m100 = null;
+                        m100 = new Moneda100();
+                        monVu.addObject(m100);
+                    };
+                    return null;
+                }
             } else if (cual == Articulos.SPRITE.ordinal()) {
-                b = sprite.getObject();
+                if (sprite.checkObject()) {
+                    if (m.getValor() < Articulos.SPRITE.getPrecio()) {
+                        for (int i = 0; i < (m.getValor() / 100); i++) {
+                            Moneda m100 = null;
+                            m100 = new Moneda100();
+                            monVu.addObject(m100);
+                        }
+                        return null;
+                    } else if (m.getValor() > Articulos.SPRITE.getPrecio()) {
+                        Moneda m100 = null;
+                        for (int i = 0; i < ((m.getValor() - Articulos.SPRITE.getPrecio()) / 100); i++) {
+                            m100 = new Moneda100();
+                            monVu.addObject(m100);
+                        }
+                        return sprite.getObject();
+                    } else {
+                        return sprite.getObject();
+                    }
+                } else {
+                    for (int i = 0; i < (m.getValor() / 100); i++) {
+                        Moneda m100 = null;
+                        m100 = new Moneda100();
+                        monVu.addObject(m100);
+                    };
+                    return null;
+                }
+            } else if (cual == Articulos.FANTA.ordinal()) {
+                if (fanta.checkObject()) {
+                    if (m.getValor() < Articulos.FANTA.getPrecio()) {
+                        for (int i = 0; i < (m.getValor() / 100); i++) {
+                            Moneda m100 = null;
+                            m100 = new Moneda100();
+                            monVu.addObject(m100);
+                        }
+                        return null;
+                    } else if (m.getValor() > Articulos.FANTA.getPrecio()) {
+                        Moneda m100 = null;
+                        for (int i = 0; i < ((m.getValor() - Articulos.FANTA.getPrecio()) / 100); i++) {
+                            m100 = new Moneda100();
+                            monVu.addObject(m100);
+                        }
+                        return fanta.getObject();
+                    } else {
+                        return fanta.getObject();
+                    }
+                } else {
+                    for (int i = 0; i < (m.getValor() / 100); i++) {
+                        Moneda m100 = null;
+                        m100 = new Moneda100();
+                        monVu.addObject(m100);
+                    };
+                    return null;
+                }
+            } else if (cual == Articulos.SNICKERS.ordinal()) {
+                if (snickers.checkObject()) {
+                    if (m.getValor() < Articulos.SNICKERS.getPrecio()) {
+                        for (int i = 0; i < (m.getValor() / 100); i++) {
+                            Moneda m100 = null;
+                            m100 = new Moneda100();
+                            monVu.addObject(m100);
+                        }
+                        return null;
+                    } else if (m.getValor() > Articulos.SNICKERS.getPrecio()) {
+                        Moneda m100 = null;
+                        for (int i = 0; i < ((m.getValor() - Articulos.SNICKERS.getPrecio()) / 100); i++) {
+                            m100 = new Moneda100();
+                            monVu.addObject(m100);
+                        }
+                        return snickers.getObject();
+                    } else {
+                        return snickers.getObject();
+                    }
+                } else {
+                    for (int i = 0; i < (m.getValor() / 100); i++) {
+                        Moneda m100 = null;
+                        m100 = new Moneda100();
+                        monVu.addObject(m100);
+                    };
+                    return null;
+                }
+            } else if (cual == Articulos.SUPER8.ordinal()) {
+                if  (super8.checkObject()) {
+                    if (m.getValor() < Articulos.SUPER8.getPrecio()) {
+                        for (int i = 0; i < (m.getValor() / 100); i++) {
+                            Moneda m100 = null;
+                            m100 = new Moneda100();
+                            monVu.addObject(m100);
+                        }
+                        return null;
+                    } else if (m.getValor() > Articulos.SUPER8.getPrecio()) {
+                        Moneda m100 = null;
+                        for (int i = 0; i < ((m.getValor() - Articulos.SUPER8.getPrecio()) / 100); i++) {
+                            m100 = new Moneda100();
+                            monVu.addObject(m100);
+                        }
+                        return super8.getObject();
+                    } else {
+                        return super8.getObject();
+                    }
+                } else {
+                    for (int i = 0; i < (m.getValor() / 100); i++) {
+                        Moneda m100 = null;
+                        m100 = new Moneda100();
+                        monVu.addObject(m100);
+                    };
+                    return null;
+                }
             } else {
                 for (int i = 0; i < (m.getValor() / 100); i++) {
                     Moneda m100 = null;
                     m100 = new Moneda100();
                     monVu.addObject(m100);
                 }
-                return null;
-            }
-            if (m.getValor() < precio) {
-                if (cual == Articulos.COCA.ordinal()) {
-                    coca.addObject(b);
-                } else {
-                    sprite.addObject(b);
-                }
-                for (int i = 0; i < (m.getValor() / 100); i++) {
-                    Moneda m100 = null;
-                    m100 = new Moneda100();
-                    monVu.addObject(m100);
-                }
-                return null;
-            } else if (cual == Articulos.COCA.ordinal() && b != null) {
-                if (m.getValor() > precio) {
-                    Moneda m100 = null;
-                    for (int i = 0; i < ((m.getValor() - precio) / 100); i++) {
-                        m100 = new Moneda100();
-                        monVu.addObject(m100);
-                    }
-                    return b;
-                } else {
-                    return b;
-                }
-            } else if (cual == Articulos.SPRITE.ordinal() && b != null) {
-                if (m.getValor() > precio) {
-                    Moneda m100 = null;
-                    for (int i = 0; i < ((m.getValor() - precio) / 100); i++) {
-                        m100 = new Moneda100();
-                        monVu.addObject(m100);
-                    }
-                    return b;
-                } else {
-                    return b;
-                }
-            } else {
-                for (int i = 0; i < (m.getValor() / 100); i++) {
-                    Moneda m100 = null;
-                    m100 = new Moneda100();
-                    monVu.addObject(m100);
-                };
                 return null;
             }
         }
