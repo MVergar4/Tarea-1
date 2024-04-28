@@ -1,7 +1,7 @@
 package org.example;
 
 /**
- * Superclase y Subclase de producto y los productos que son dulces.
+ * Superclase y Subclase de producto y los productos que son dulces respectivamente.
  */
 public abstract class Dulce extends Producto {
     /** Constructor */
