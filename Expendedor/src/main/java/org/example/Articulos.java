@@ -3,6 +3,7 @@ package org.example;
  * Un enum donde se guardan los tipos de productos y sirve para retornar los precios de estos mismos.
  */
 public enum Articulos{
+    /** Productos del expendedor con sus respectivos.*/
     COCA(900),
     SPRITE(800),
     FANTA(600),
@@ -13,6 +14,6 @@ public enum Articulos{
         this.precio=x;
     }
     public int getPrecio(){
-        return precio; /** Getter del precio del producto solicitado */
+        return precio; /** Getter del precio del producto solicitado
     }
 }
