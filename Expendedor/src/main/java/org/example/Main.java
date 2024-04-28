@@ -70,5 +70,6 @@ public class Main {
         p = new Comprador(m, Articulos.SUPER8.ordinal(), exp);
         System.out.println(p.cuantoVuelto() + ", " + p.queConsumiste());
         System.out.println();
+
     }
 }
