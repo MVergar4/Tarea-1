@@ -1,11 +1,11 @@
 package org.example;
 
 public enum Articulos{
-    COCA(1200),
-    SPRITE(1000),
-    FANTA(800), //Precio de cada articulo.
-    SNICKER(300),
-    SUPER8(400);
+    COCA(900),
+    SPRITE(800),
+    FANTA(600), //Precio de cada articulo.
+    SNICKERS(400),
+    SUPER8(300);
     private final int precio;
     Articulos(int x){
         this.precio=x;

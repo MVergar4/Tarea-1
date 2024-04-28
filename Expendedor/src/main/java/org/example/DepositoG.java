@@ -6,6 +6,9 @@ class DepositoG<T>{
     public DepositoG(){
         this.al = new ArrayList<>();
     }
+    public boolean checkObject() {
+        return !al.isEmpty();
+    }
     public T getObject(){
         if (!al.isEmpty()) {
             return al.remove(0);
