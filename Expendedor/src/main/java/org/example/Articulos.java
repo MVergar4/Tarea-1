@@ -14,6 +14,6 @@ public enum Articulos{
         this.precio=x;
     }
     public int getPrecio(){
-        return precio; /** Getter del precio del producto solicitado
+        return precio; /** Getter del precio del producto solicitado */
     }
 }
