@@ -6,7 +6,7 @@ public class Expendedor {
     private Deposito<Producto> fanta = new Deposito();
     private Deposito<Producto> snickers = new Deposito();
     private Deposito<Producto> super8 = new Deposito();
-    private Deposito<Moneda> monVu = new Deposito();
+    private Deposito<Moneda> monVu;
     public Expendedor(int numProductos) {
         for (int i = 0; i < numProductos; i++) {
             Producto p = null;
@@ -26,6 +26,7 @@ public class Expendedor {
         if (m == null) {
             throw new PagoIncorrectoException("Error, no se ha entregado moneda");
         } else {
+            monVu = new Deposito();
             if (cual == Articulos.COCA.ordinal()) {
                 if (coca.checkObject()) {
                     if (m.getValor() < Articulos.COCA.getPrecio()) {
