@@ -1,12 +1,12 @@
 package org.example;
 
 public class Expendedor {
-    private DepositoG<Producto> coca = new DepositoG();
-    private DepositoG<Producto> sprite = new DepositoG();
-    private DepositoG<Producto> fanta = new DepositoG();
-    private DepositoG<Producto> snickers = new DepositoG();
-    private DepositoG<Producto> super8 = new DepositoG();
-    private DepositoG<Moneda> monVu = new DepositoG();
+    private Deposito<Producto> coca = new Deposito();
+    private Deposito<Producto> sprite = new Deposito();
+    private Deposito<Producto> fanta = new Deposito();
+    private Deposito<Producto> snickers = new Deposito();
+    private Deposito<Producto> super8 = new Deposito();
+    private Deposito<Moneda> monVu = new Deposito();
     public Expendedor(int numProductos) {
         for (int i = 0; i < numProductos; i++) {
             Producto p = null;
