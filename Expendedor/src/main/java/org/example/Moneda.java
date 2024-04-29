@@ -1,7 +1,7 @@
 package org.example;
 
 /**
- * Superclase Moneda que
+ * Superclase Moneda para todas las monedas, ademas implementa la interfaz comparable.
  */
 public abstract class Moneda implements Comparable<Moneda> {
     /** Constructor */

@@ -23,6 +23,11 @@ public enum Articulos{
     Articulos(int x){
         this.precio=x;
     }
+
+    /**
+     * Metodo que dependiendo del producto solicitado crea una moneda del precio solicitado
+     * @return objeto moneda que representa el precio del producto
+     */
     public Moneda getDiferencia(){
         if(precio==900){
             return new Moneda900();
@@ -43,6 +48,11 @@ public enum Articulos{
             return null;
         }
     }
+
+    /**
+     * Metodo que devuelve el precio del producto
+     * @return entero con el precio.
+     */
     public int getPrecio(){
         return precio;
     }
