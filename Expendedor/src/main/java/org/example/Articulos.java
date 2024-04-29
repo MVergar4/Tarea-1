@@ -9,11 +9,22 @@ public enum Articulos{
     FANTA(600),
     SNICKERS(400),
     SUPER8(300);
-    private final int precio; /** Entero para almacenar el precio del producto pedido */
-    Articulos(int x){ /** Metodo que guarda el precio del producto solicitado*/
+    /** Entero para almacenar el precio del producto pedido */
+    private final int precio;
+
+    /**
+     * Metodo que guarda el precio del producto solicitado
+     * @param Guarda el precio del producto solicitado
+     */
+    Articulos(int x){
         this.precio=x;
     }
+
+    /**
+     * Getter del precio del producto pedido.
+     * @return Devuelve el precio del producto pedido
+     */
     public int getPrecio(){
-        return precio; /** Getter del precio del producto solicitado */
+        return precio;
     }
 }
