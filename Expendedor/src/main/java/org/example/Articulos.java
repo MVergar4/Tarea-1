@@ -14,7 +14,7 @@ public enum Articulos{
 
     /**
      * Metodo que guarda el precio del producto solicitado
-     * @param Guarda el precio del producto solicitado
+     * @param x guarda el precio del producto solicitado
      */
     Articulos(int x){
         this.precio=x;
