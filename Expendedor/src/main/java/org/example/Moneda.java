@@ -16,6 +16,12 @@ public abstract class Moneda implements Comparable<Moneda> {
     public Moneda getSerie() {
         return this;
     }
+
+    /**
+     * Metodo que sirve para medir si se puede comprar un producto o no,
+     * @param v El precio del producto.
+     * @return la diferencia entre la moneda ingresada y el precio del producto
+     */
     public int compareTo(Moneda v){
         return this.getValor()-v.getValor();
     }
