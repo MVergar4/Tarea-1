@@ -3,11 +3,15 @@ package org.example;
  * Un enum donde se guardan los tipos de productos y sirve para retornar los precios de estos mismos.
  */
 public enum Articulos{
-    /** Productos del expendedor con sus respectivos precios.*/
+    /** Precio Cocacola */
     COCA(900),
+    /** Precio Sprite */
     SPRITE(800),
+    /** Precio Fanta */
     FANTA(600),
+    /** Precio Snicker */
     SNICKERS(400),
+    /** Precio Super8 */
     SUPER8(300);
     /** Entero para almacenar el precio del producto pedido */
     private final int precio;
