@@ -3,7 +3,7 @@ package org.example;
  * Superclase y Subclase de producto y los productos que son bebidas respectivamente.
  */
 public abstract class Bebida extends Producto {
-    /** Constructor */
+    /** Constructor que por defecto solo inicializa*/
     public Bebida() {
         super();
     }

@@ -4,9 +4,11 @@ package org.example;
  * Superclase para todos los tipos de productos
  */
 public abstract class Producto {
-    /** Constructor */
+    /** Constructor que por defecto solo inicializa*/
     public Producto() {}
-    /** Metodo que devuelve la direccion del objeto creado que corresponde a el numero de serie del producto.*/
+    /** Metodo que devuelve la direccion del objeto creado que corresponde a el numero de serie del producto.
+     * @return Numero de serie(Direccion de memoria)
+     */
     public Producto getSerie() {
         return this;
     }
