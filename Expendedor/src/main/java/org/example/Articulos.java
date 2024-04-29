@@ -26,9 +26,21 @@ public enum Articulos{
 
     /**
      * Getter del precio del producto pedido.
-     * @return Devuelve el precio del producto pedido
+     * @return Devuelve el precio del producto pedido mediante una moneda
      */
-    public int getPrecio(){
-        return precio;
+    public Moneda getPrecio(){
+        switch(precio){
+            case(300):
+                Moneda m = new Moneda300();
+            case(400):
+                Moneda m = new Moneda400();
+            case(600):
+                Moneda m = new Moneda600();
+            case(800):
+                Moneda m = new Moneda800();
+            case(900):
+                Moneda m = new Moneda900();
+        }
+        return m;
     }
 }
