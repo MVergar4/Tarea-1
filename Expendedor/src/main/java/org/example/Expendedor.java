@@ -53,14 +53,14 @@ public class Expendedor {
             monVu = new Deposito();
             if (cual == Articulos.COCA.ordinal()) {
                 if (coca.checkObject()) {
-                    if (m.getValor() < Articulos.COCA.getPrecio()) {
+                    if (m.compareTo(Articulos.COCA.getDiferencia())<0) {
                         for (int i = 0; i < (m.getValor() / 100); i++) {
                             Moneda m100 = null;
                             m100 = new Moneda100();
                             monVu.addObject(m100);
                         }
                         throw new PagoInsuficienteException("Error, el valor de la moneda no alcanza para comprar CocaCola");
-                    } else if (m.getValor() > Articulos.COCA.getPrecio()) {
+                    } else if (m.compareTo(Articulos.COCA.getDiferencia())>0) {
                         Moneda m100 = null;
                         for (int i = 0; i < ((m.getValor() - Articulos.COCA.getPrecio()) / 100); i++) {
                             m100 = new Moneda100();
@@ -80,14 +80,14 @@ public class Expendedor {
                 }
             } else if (cual == Articulos.SPRITE.ordinal()) {
                 if (sprite.checkObject()) {
-                    if (m.getValor() < Articulos.SPRITE.getPrecio()) {
+                    if (m.compareTo(Articulos.SPRITE.getDiferencia())<0) {
                         for (int i = 0; i < (m.getValor() / 100); i++) {
                             Moneda m100 = null;
                             m100 = new Moneda100();
                             monVu.addObject(m100);
                         }
                         throw new PagoInsuficienteException("Error, el valor de la moneda no alcanza para comprar Sprite");
-                    } else if (m.getValor() > Articulos.SPRITE.getPrecio()) {
+                    } else if (m.compareTo(Articulos.SPRITE.getDiferencia())>0) {
                         Moneda m100 = null;
                         for (int i = 0; i < ((m.getValor() - Articulos.SPRITE.getPrecio()) / 100); i++) {
                             m100 = new Moneda100();
@@ -107,14 +107,14 @@ public class Expendedor {
                 }
             } else if (cual == Articulos.FANTA.ordinal()) {
                 if (fanta.checkObject()) {
-                    if (m.getValor() < Articulos.FANTA.getPrecio()) {
+                    if (m.compareTo(Articulos.FANTA.getDiferencia())<0) {
                         for (int i = 0; i < (m.getValor() / 100); i++) {
                             Moneda m100 = null;
                             m100 = new Moneda100();
                             monVu.addObject(m100);
                         }
                         throw new PagoInsuficienteException("Error, el valor de la moneda no alcanza para comprar Fanta");
-                    } else if (m.getValor() > Articulos.FANTA.getPrecio()) {
+                    } else if (m.compareTo(Articulos.FANTA.getDiferencia())>0) {
                         Moneda m100 = null;
                         for (int i = 0; i < ((m.getValor() - Articulos.FANTA.getPrecio()) / 100); i++) {
                             m100 = new Moneda100();
@@ -134,14 +134,14 @@ public class Expendedor {
                 }
             } else if (cual == Articulos.SNICKERS.ordinal()) {
                 if (snickers.checkObject()) {
-                    if (m.getValor() < Articulos.SNICKERS.getPrecio()) {
+                    if (m.compareTo(Articulos.SNICKERS.getDiferencia())<0) {
                         for (int i = 0; i < (m.getValor() / 100); i++) {
                             Moneda m100 = null;
                             m100 = new Moneda100();
                             monVu.addObject(m100);
                         }
                         throw new PagoInsuficienteException("Error, el valor de la moneda no alcanza para comprar Snickers");
-                    } else if (m.getValor() > Articulos.SNICKERS.getPrecio()) {
+                    } else if (m.compareTo(Articulos.SNICKERS.getDiferencia())>0) {
                         Moneda m100 = null;
                         for (int i = 0; i < ((m.getValor() - Articulos.SNICKERS.getPrecio()) / 100); i++) {
                             m100 = new Moneda100();
@@ -161,14 +161,14 @@ public class Expendedor {
                 }
             } else if (cual == Articulos.SUPER8.ordinal()) {
                 if  (super8.checkObject()) {
-                    if (m.getValor() < Articulos.SUPER8.getPrecio()) {
+                    if (m.compareTo(Articulos.SUPER8.getDiferencia())<0) {
                         for (int i = 0; i < (m.getValor() / 100); i++) {
                             Moneda m100 = null;
                             m100 = new Moneda100();
                             monVu.addObject(m100);
                         }
                         throw new PagoInsuficienteException("Error, el valor de la moneda no alcanza para comprar Super8");
-                    } else if (m.getValor() > Articulos.SUPER8.getPrecio()) {
+                    } else if (m.compareTo(Articulos.SUPER8.getDiferencia())>0) {
                         Moneda m100 = null;
                         for (int i = 0; i < ((m.getValor() - Articulos.SUPER8.getPrecio()) / 100); i++) {
                             m100 = new Moneda100();
