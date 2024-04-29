@@ -3,7 +3,7 @@ package org.example;
  * Un enum donde se guardan los tipos de productos y sirve para retornar los precios de estos mismos.
  */
 public enum Articulos{
-    /** Precio Cocacola */
+    /** Precio CocaCola */
     COCA(900),
     /** Precio Sprite */
     SPRITE(800),
@@ -23,24 +23,27 @@ public enum Articulos{
     Articulos(int x){
         this.precio=x;
     }
-
-    /**
-     * Getter del precio del producto pedido.
-     * @return Devuelve el precio del producto pedido mediante una moneda
-     */
-    public Moneda getPrecio(){
-        switch(precio){
-            case(300):
-                Moneda m = new Moneda300();
-            case(400):
-                Moneda m = new Moneda400();
-            case(600):
-                Moneda m = new Moneda600();
-            case(800):
-                Moneda m = new Moneda800();
-            case(900):
-                Moneda m = new Moneda900();
+    public Moneda getDiferencia(){
+        if(precio==900){
+            return new Moneda900();
         }
-        return m;
+        else if(precio ==800){
+            return new Moneda800();
+        }
+        else if(precio ==600){
+            return new Moneda600();
+        }
+        else if(precio ==400){
+            return new Moneda400();
+        }
+        else if(precio == 300){
+            return new Moneda300();
+        }
+        else{
+            return null;
+        }
+    }
+    public int getPrecio(){
+        return precio;
     }
 }

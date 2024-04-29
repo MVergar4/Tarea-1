@@ -10,9 +10,9 @@ public class Moneda900 extends Moneda {
 
     /**
      * Metodo que devuelve el valor de la moneda
-     * @return devuelve 500
+     * @return devuelve 900
      */
     public int getValor() {
-        return 500;
+        return 900;
     }
 }
