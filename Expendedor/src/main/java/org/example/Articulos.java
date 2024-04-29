@@ -41,11 +41,8 @@ public enum Articulos{
         else if(precio ==400){
             return new Moneda400();
         }
-        else if(precio == 300){
-            return new Moneda300();
-        }
         else{
-            return null;
+            return new Moneda300();
         }
     }
 
