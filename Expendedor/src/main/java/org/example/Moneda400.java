@@ -1,6 +1,6 @@
 package org.example;
 /**
- * Subclase Moneda100 que sirve meramente para devolver su valor.
+ * Subclase Moneda400 que sirve meramente para devolver su valor.
  */
 public class Moneda400 extends Moneda {
     /** Constructor que por defecto solo inicializa*/

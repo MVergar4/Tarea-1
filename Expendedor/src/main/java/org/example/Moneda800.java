@@ -1,18 +1,18 @@
 package org.example;
 /**
- * Subclase Moneda300 que sirve meramente para devolver su valor.
+ * Subclase Moneda800 que sirve meramente para devolver su valor.
  */
-public class Moneda300 extends Moneda {
+public class Moneda800 extends Moneda {
     /** Constructor que por defecto solo inicializa*/
-    public Moneda300() {
+    public Moneda800() {
         super();
     }
 
     /**
      * Metodo que devuelve el valor de la moneda
-     * @return devuelve 300
+     * @return devuelve 800
      */
     public int getValor() {
-        return 300;
+        return 800;
     }
 }
